@@ -5,10 +5,28 @@
 ## button matrix
 
 ```
-void transitionPin() { // Disable the output first by setting the pin low HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);  // Reconfigure the pin as an input GPIO_InitStruct.Pin = GPIO_PIN_5; GPIO_InitStruct.Mode = GPIO_MODE_INPUT; GPIO_InitStruct.Pull = GPIO_NOPULL; // Adjust the pull-up/pull-down configuration if needed HAL_GPIO_Init(GPIOA, &GPIO_InitStruct); }
+void transitionPin() { 
+// Disable the output first by setting the pin low 
+HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);  
+// Reconfigure the pin as an input 
+GPIO_InitStruct.Pin = GPIO_PIN_5; 
+GPIO_InitStruct.Mode = GPIO_MODE_INPUT; 
+GPIO_InitStruct.Pull = GPIO_NOPULL; 
+// Adjust the pull-up/pull-down configuration if needed HAL_GPIO_Init(GPIOA, &GPIO_InitStruct); }
 all gpio basic command
 
-void switchBackToOutput() { // De-initialize or disable input mode HAL_GPIO_DeInit(GPIOA, GPIO_PIN_5);  // Reconfigure the pin as an open-drain output GPIO_InitStruct.Pin = GPIO_PIN_5; GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_OD; // Set as open-drain output GPIO_InitStruct.Pull = GPIO_NOPULL; GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW; // Adjust speed if needed HAL_GPIO_Init(GPIOA, &GPIO_InitStruct); }
+void switchBackToOutput() { 
+// De-initialize or disable input mode 
+HAL_GPIO_DeInit(GPIOA, GPIO_PIN_5);  
+// Reconfigure the pin as an open-drain output 
+GPIO_InitStruct.Pin = GPIO_PIN_5; 
+GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_OD; 
+// Set as open-drain output 
+GPIO_InitStruct.Pull = GPIO_NOPULL; 
+GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW; 
+// Adjust speed if needed 
+HAL_GPIO_Init(GPIOA, &GPIO_InitStruct); 
+}
 ```
 Struct pin port button matrix
 ```
