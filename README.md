@@ -2,7 +2,8 @@
 
 
 ### 
-## button matrix
+## OUT2IN2OUT
+## (open drained)
 
 ```
 void transitionPin() { 
